@@ -1,0 +1,99 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>CrapFixer</RootNamespace>
+    <AssemblyName>CrapFixer</AssemblyName>
+    <Title>CrapFixer</Title>
+    <Product>CrapFixer</Product>
+    <AssemblyVersion>2.01.41.0</AssemblyVersion>
+    <FileVersion>2.01.41.0</FileVersion>
+    <Version>2.01.41.0</Version>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainForm.Designer.cs"><DependentUpon>MainForm.cs</DependentUpon></Compile>
+    <Compile Update="Views\TweakerView.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Update="Views\TweakerView.Designer.cs">
+      <DependentUpon>TweakerView.cs</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TweakerView.Tree.cs"><SubType>Code</SubType></Compile>
+    <Compile Update="Views\TweakerView.Actions.cs"><SubType>Code</SubType></Compile>
+    <Compile Update="Views\TweakerView.Results.cs"><SubType>Code</SubType></Compile>
+    <Compile Update="Views\ToolsView.Designer.cs"><DependentUpon>ToolsView.cs</DependentUpon></Compile>
+    <Compile Update="Views\Tools\CustomTweaksView.Designer.cs"><DependentUpon>CustomTweaksView.cs</DependentUpon></Compile>
+    <Compile Update="Views\Tools\AppRemoverView.Designer.cs"><DependentUpon>AppRemoverView.cs</DependentUpon></Compile>
+    <Compile Update="Views\Tools\Extensions\ExtensionsView.Designer.cs"><DependentUpon>ExtensionsView.cs</DependentUpon></Compile>
+    <Compile Update="Views\CustomTweakDialog.Designer.cs"><DependentUpon>CustomTweakDialog.cs</DependentUpon></Compile>
+    <Compile Update="Views\ExplainDialog.Designer.cs"><DependentUpon>ExplainDialog.cs</DependentUpon></Compile>
+    <Compile Update="Views\OptionsView.Designer.cs"><DependentUpon>OptionsView.cs</DependentUpon></Compile>
+    <Compile Update="Views\Settings\BasicSettingsView.Designer.cs"><DependentUpon>BasicSettingsView.cs</DependentUpon></Compile>
+    <Compile Update="Views\Settings\AdvancedSettingsView.Designer.cs"><DependentUpon>AdvancedSettingsView.cs</DependentUpon></Compile>
+    <Compile Update="Views\Settings\AiSettingsView.Designer.cs"><DependentUpon>AiSettingsView.cs</DependentUpon></Compile>
+    <Compile Update="Views\Settings\AboutSettingsView.Designer.cs"><DependentUpon>AboutSettingsView.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="MainForm.resx"><DependentUpon>MainForm.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\TweakerView.resx"><DependentUpon>TweakerView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\ToolsView.resx"><DependentUpon>ToolsView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\Tools\CustomTweaksView.resx"><DependentUpon>CustomTweaksView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\Tools\AppRemoverView.resx"><DependentUpon>AppRemoverView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\Tools\Extensions\ExtensionsView.resx"><DependentUpon>ExtensionsView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\CustomTweakDialog.resx"><DependentUpon>CustomTweakDialog.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\OptionsView.resx"><DependentUpon>OptionsView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\Settings\BasicSettingsView.resx"><DependentUpon>BasicSettingsView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\Settings\AdvancedSettingsView.resx"><DependentUpon>AdvancedSettingsView.cs</DependentUpon></EmbeddedResource>
+    <EmbeddedResource Update="Views\Settings\AboutSettingsView.resx"><DependentUpon>AboutSettingsView.cs</DependentUpon></EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Localization\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="docs\extensions.ini">
+      <Link>Extensions\extensions.ini</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </Content>
+    <None Remove="docs\**\*" />
+    <Content Include="..\Wintweak2.ini">
+      <Link>Wintweak2.ini</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Winappx.ini">
+      <Link>Winappx.ini</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\fixer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\FluentCleaner\FluentCleaner.Classic\Assets\custom.png">
+      <Link>Assets\tools.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\FluentCleaner\FluentCleaner.Classic\Assets\options.png">
+      <Link>Assets\options.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
