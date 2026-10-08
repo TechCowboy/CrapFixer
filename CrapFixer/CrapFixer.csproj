@@ -87,13 +87,5 @@
     <Content Include="Assets\fixer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\FluentCleaner\FluentCleaner.Classic\Assets\custom.png">
-      <Link>Assets\tools.png</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\FluentCleaner\FluentCleaner.Classic\Assets\options.png">
-      <Link>Assets\options.png</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 </Project>
